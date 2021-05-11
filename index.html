@@ -14,8 +14,10 @@
         <div class="intro-left">
             <h1>Animate.css</h1>
             <h2>Just-add-water CSS animations</h2>
+            <a href="#" class="btn" id="intro-sidebar-open-btn">See animations</a>
         </div>
-        <div class="intro-sidebar">
+        <div class="intro-sidebar" id="intro-sidebar">
+            <a href="#" class="btn" id="intro-sidebar-close-btn">Close list</a>
             <section>
                 <h3>Attention seekers</h3>
                 <ul>
@@ -235,6 +237,13 @@
         </header>
 
         <article id="documentation">
+            <a href="#" id="hamburger-menu-btn" class="hamburger">
+                <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="1.5" x2="23" y2="1.5" stroke="#351C75" stroke-width="3"></line>
+                    <line y1="7.5" x2="23" y2="7.5" stroke="#351C75" stroke-width="3"></line>
+                    <line y1="13.5" x2="23" y2="13.5" stroke="#351C75" stroke-width="3"></line>
+                </svg>
+            </a>
             <div class="container">
                 <div class="content">
                     <section>
@@ -448,7 +457,7 @@
                             unacceptable behavior to <a href="#">callmeelton@gmail.com</a>.</p>
                     </section>
                 </div>
-                <div class="sidebar">
+                <div class="sidebar" id="sidebar">
                     <div class="version">
                         <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18" width="18"
@@ -500,6 +509,30 @@
                 license file.</p>
         </footer>
     </main>
+
+    <script>
+        let introSidebar = document.getElementById('intro-sidebar')
+        let sidebar = document.getElementById('sidebar')
+        let openBtn = document.getElementById('intro-sidebar-open-btn')
+        let closeBtn = document.getElementById('intro-sidebar-close-btn')
+        let hamburgerBtn = document.getElementById('hamburger-menu-btn')
+
+        openBtn.addEventListener('click', (e) => {
+            introSidebar.classList.add('active')
+            e.preventDefault()
+        })
+
+        closeBtn.addEventListener('click', (e) => {
+            introSidebar.classList.remove('active')
+            e.preventDefault()
+        })
+
+        hamburgerBtn.addEventListener('click', (e) => {
+            hamburgerBtn.classList.toggle('active')
+            sidebar.classList.toggle('active')
+            e.preventDefault(e)
+        })
+    </script>
 </body>
 
 </html>
