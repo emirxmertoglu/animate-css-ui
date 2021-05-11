@@ -1,1 +1,172 @@
 @import 'reset'
+
+\:root
+    --renk1: #FCE5CD
+    --renk2: #F7D7B5
+    --renk3: #351C75
+    --renk4: #E69139
+    --pre-color: #2D2D2D
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+h1
+    font-size: 72px
+    font-weight: 700
+    color: var(--renk3)
+
+h2
+    font-size: 24px
+    font-weight: 700
+    color: var(--renk4)
+
+h3
+    font-size: 18px
+    font-weight: 700
+    color: #333
+
+a
+    text-decoration: underline
+    color: var(--renk3)
+
+// INTRO
+.intro
+    height: calc( 100vh - 50px )
+    display: grid
+    grid-template-columns: [intro-left] 1fr [intro-sidebar] 250px
+    grid-template-rows: 1fr auto
+    grid-template-areas: 'intro-left intro-sidebar' 'intro-footer intro-sidebar'
+    background: var(--renk1)
+    .intro-left
+        grid-area: intro-left
+        align-self: center
+        justify-self: center
+        text-align: center
+        h1
+            margin-bottom: 10px
+    .intro-sidebar
+        grid-area: intro-sidebar
+        background: var(--renk2)
+        padding: 36px
+        overflow: auto
+        section
+            &:not(:last-child)
+                margin-bottom: 25px
+            h3
+                margin-bottom: 10px
+            ul
+                li
+                    a
+                        display: block
+                        height: 25px
+                        font-size: 18px
+                        line-height: 25px
+                        color: #333
+                        text-decoration: none
+    .intro-footer
+        grid-area: intro-footer
+        text-align: center
+        font-size: 14px
+        color: #333
+        margin-bottom: 50px
+
+// MAIN
+main
+    header
+        background: var(--renk3)
+        .container
+            display: grid
+            grid-template-columns: 1fr 1100px 2fr
+            height: 50px
+            h2
+                grid-column: 2 / 3
+                align-self: center
+                a
+                    text-decoration: none
+                    color: var(--renk4)
+    article
+        .container
+            display: grid
+            grid-template-columns: 1fr 1100px 2fr
+            .content
+                grid-column: 2 / 3
+                padding: 30px 30px 30px 0
+                .bold
+                    font-weight: 700
+                blockquote
+                    font-size: 18px
+                    color: #333
+                    line-height: 24px
+                    border-left: 5px solid var(--renk4)
+                    padding-left: 25px
+                    margin-bottom: 30px
+                p
+                    font-size: 18px
+                    color: #333
+                    line-height: 24px
+                    letter-spacing: .4px
+                    margin-bottom: 30px
+                h2
+                    font-size: 36px
+                    line-height: 48px
+                    color: var(--renk3)
+                    margin-bottom: 35px
+                h3
+                    font-size: 25px
+                    line-height: 34px
+                    color: var(--renk3)
+                    margin-bottom: 30px
+                    code
+                        font-size: 25px
+                        font-weight: 500
+                pre
+                    font-family: Consolas, Monaco
+                    font-size: 14px
+                    color: #fff
+                    background: var(--pre-color)
+                    padding: 18px
+                    border-radius: 5px
+                    margin-bottom: 30px
+                code
+                    font-family: Consolas, Monaco
+                    font-size: 14px
+                    background: var(--renk2)
+                section
+                    scroll-margin: 20px
+                    &:not(:last-child)
+                        border-bottom: 1px solid #eaeaea
+                        margin-bottom: 50px
+                        padding-bottom: 25px
+            .sidebar
+                grid-column: 3 / 3
+                padding: 18px 36px
+                background: var(--renk2)
+                .version
+                    display: flex
+                    align-items: center
+                    margin-bottom: 30px
+                    a
+                        margin-right: 10px
+                    .text
+                        font-size: 18px
+                        color: #333
+                nav
+                    position: sticky
+                    top: 18px
+                    ul
+                        li
+                            &:not(:last-child)
+                                margin-bottom: 10px
+                            a
+                                display: block
+                                font-size: 18px
+    footer
+        background: var(--renk3)
+        color: #fff
+        text-align: center
+        padding: 20px 0
+        font-size: 14px
+        letter-spacing: .5px
