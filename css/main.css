@@ -291,6 +291,22 @@ main .hamburger {
   transition: 300ms transform, 300ms -webkit-transform;
 }
 
+main .hamburger .hamburger-icon {
+  display: block;
+}
+
+main .hamburger .hamburger-icon.active {
+  display: none;
+}
+
+main .hamburger .x-icon {
+  display: none;
+}
+
+main .hamburger .x-icon.active {
+  display: block;
+}
+
 main .hamburger.active {
   -webkit-transform: translateX(-240px);
           transform: translateX(-240px);

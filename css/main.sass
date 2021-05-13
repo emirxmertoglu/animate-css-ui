@@ -145,6 +145,14 @@ main
         color: var(--renk3)
         will-change: transform
         transition: 300ms transform
+        .hamburger-icon
+            display: block
+            &.active
+                display: none
+        .x-icon
+            display: none
+            &.active
+                display: block
         &.active
             transform: translateX(-240px)
         @media screen and ( min-width: 1000px )
